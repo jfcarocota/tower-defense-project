@@ -13,4 +13,11 @@ public class Score : MonoBehaviour
         scoreText = GetComponent<TextMeshProUGUI>();
     }
 
+    public void AddPoints(int points)
+    {
+        score += points;
+        UpdateScoreText();
+    }
+
+    public void UpdateScoreText() => scoreText.text = $"Score: {score}";
 }
