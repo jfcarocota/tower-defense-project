@@ -10,6 +10,4 @@ public class Hostile : MonoBehaviour
     protected string enemyTag;
     [SerializeField]
     protected LayerMask enemyLayer;
-
-    
 }

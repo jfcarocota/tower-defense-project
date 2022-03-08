@@ -11,12 +11,12 @@ public class Enemy : Character
 
     protected override void Attack()
     {
-    base.Attack();
+        base.Attack();
     }
 
     protected override void CheckStillAlive()
     {
-    base.CheckStillAlive();
+        base.CheckStillAlive();
     }
 
     protected virtual void Movement()
