@@ -7,7 +7,7 @@ public abstract class LivingObject : MonoBehaviour
     [SerializeField]
     protected int health;
 
-    public void ReciveDamage(int damage)
+    public virtual void ReciveDamage(int damage)
     {
 
     }

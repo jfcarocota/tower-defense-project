@@ -10,8 +10,11 @@ public class GameMode : MonoBehaviour
     HealthBar healthBar;
     [SerializeField]
     Base currentBase;
+
+    public Base GetCurrentBase => currentBase;
+
     private void Start()
-   {
-       GameManager.Instance.CurrentGameMode = this;
-   }
+    {
+        GameManager.Instance.CurrentGameMode = this;
+    }
 }

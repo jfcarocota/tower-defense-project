@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField]
     GameMode gameMode;
+
     private void Awake()
     {
         if(Instance == null)

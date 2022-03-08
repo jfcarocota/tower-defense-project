@@ -1,9 +1,9 @@
 {
-    "name": "Managers",
+    "name": "Gameplay",
     "rootNamespace": "",
     "references": [
-        "GUID:9879aa81fc188134abeca7f964254b73",
-        "GUID:88fbe5a01770ce44e9f984461c85e151"
+        "GUID:88fbe5a01770ce44e9f984461c85e151",
+        "GUID:9879aa81fc188134abeca7f964254b73"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
