@@ -9,7 +9,7 @@ public abstract class LivingObject : MonoBehaviour
 
     public virtual void ReciveDamage(int damage)
     {
-
+        health = health - damage > 0 ? health - damage : 0;
     }
 
     protected virtual void CheckStillAlive()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : Character
+public class Tower : Hostile
 {
     protected override void Attack()
     {

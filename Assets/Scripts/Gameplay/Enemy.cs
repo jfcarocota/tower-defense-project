@@ -4,7 +4,7 @@ using ICSharpCode.NRefactory.Ast;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : Character
+public class Enemy : Hostile
 {
     [SerializeField]
     protected float moveSpeed;
