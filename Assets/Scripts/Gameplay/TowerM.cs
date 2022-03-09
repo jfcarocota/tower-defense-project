@@ -9,19 +9,40 @@ public class TowerM : Tower
     [SerializeField]
     Transform spawnPointDownLeft;
 
+    public override void ReciveDamage(int damage)
+    {
+        base.ReciveDamage(damage);
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
+    }
+
     protected override void Attack()
     {
         base.Attack();
         //left bullet
-        GameObject goR = Instantiate<GameObject>(projectile.gameObject, spawnPointDownRight.position, Quaternion.identity);
+        GameObject goR = Instantiate<GameObject>(projectile.gameObject, spawnPointDownRight.position, rotator.rotation);
         Projectile pR = goR.GetComponent<Projectile>();
         pR.SetDamage(damage);
         //right bullet
-        GameObject goL = Instantiate<GameObject>(projectile.gameObject, spawnPointDownLeft.position, Quaternion.identity);
+        GameObject goL = Instantiate<GameObject>(projectile.gameObject, spawnPointDownLeft.position, rotator.rotation);
         Projectile pL = goL.GetComponent<Projectile>();
         pL.SetDamage(damage);
+    }
 
-        goL.transform.LookAt(target.transform);
-        goR.transform.LookAt(target.transform);
+    protected override IEnumerator Shooting()
+    {
+        Attack();
+        yield return new WaitForSeconds(attackRate);
+        Attack();
+        yield return new WaitForSeconds(0.1f);
+        Attack();
+        yield return new WaitForSeconds(0.1f);
+        if(target)
+        {
+            StartShooting();
+        }
     }
 }

@@ -117,7 +117,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  moveSpeed: 1.5
+  moveSpeed: 4
   points: 10
   spawnProbaility: 0.7
 --- !u!195 &3411601713599941472

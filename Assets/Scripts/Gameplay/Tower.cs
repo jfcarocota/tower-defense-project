@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tower : Hostile
 {
     [SerializeField]
-    Transform rotator;
+    protected Transform rotator;
     protected Enemy target;
     [SerializeField]
     protected Projectile projectile;
@@ -20,10 +20,9 @@ public class Tower : Hostile
     protected override void Attack()
     {
         base.Attack();
-        GameObject go = Instantiate<GameObject>(projectile.gameObject, spawnPoint.position, Quaternion.identity);
+        GameObject go = Instantiate<GameObject>(projectile.gameObject, spawnPoint.position, rotator.rotation);
         Projectile p = go.GetComponent<Projectile>();
         p.SetDamage(damage);
-        go.transform.LookAt(target.transform);
     }
 
     protected override void CheckStillAlive()
@@ -36,7 +35,7 @@ public class Tower : Hostile
         base.Update();
     }
 
-    void StartShooting()
+    protected void StartShooting()
     {
         shooting = Shooting();
         StartCoroutine(shooting);

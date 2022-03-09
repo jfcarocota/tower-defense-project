@@ -115,5 +115,5 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  keepAlive: 7
+  keepAlive: 4
   speed: 15

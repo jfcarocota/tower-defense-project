@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  attackRate: 0.5
+  attackRate: 0.1
   damage: 2
   enemyTag: 
   enemyLayer:

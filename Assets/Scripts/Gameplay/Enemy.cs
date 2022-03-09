@@ -27,6 +27,7 @@ public class Enemy : Hostile
             if(GameManager.Instance.CurrentGameMode)
             {
                 navMeshAgent.destination = GameManager.Instance.CurrentGameMode.GetCurrentBase.transform.position;
+                navMeshAgent.speed = moveSpeed;
                 break;
             }
             yield return null;
