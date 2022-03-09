@@ -27,6 +27,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnObject() => Instantiate<GameObject>(enemiesQueue.Dequeue().gameObject, transform.position, Quaternion.identity);
 
+    public Queue<Enemy> GetEnemiesQueue => enemiesQueue;
 
    IEnumerator Spawn()
    {
