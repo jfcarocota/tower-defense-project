@@ -42,4 +42,6 @@ public class Base : LivingObject
             Destroy(other.gameObject);
         }
     }
+
+    public int GetHealth => health;
 }

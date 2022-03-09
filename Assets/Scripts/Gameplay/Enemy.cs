@@ -11,6 +11,8 @@ public class Enemy : Hostile
     NavMeshAgent navMeshAgent;
     [SerializeField, Range(1, 100)]
     protected int points = 1;
+    [SerializeField, Range(0.1f, 1f)]
+    float spawnProbaility;
 
     private void Awake()
     {

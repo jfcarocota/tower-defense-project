@@ -6,18 +6,35 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField]
     List<Enemy> enemies;
+    Queue<Enemy> enemiesQueue;
+    [SerializeField]
     int maxSpawn;
+    [SerializeField, Range(0.1f, 10f)]
+    float spawnRate;
+    IEnumerator spawn;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        enemiesQueue = new Queue<Enemy>(enemies);
+        StartSpawn();
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartSpawn()
     {
-        
+        spawn = Spawn();
+        StartCoroutine(spawn);
     }
+
+    void SpawnObject() => Instantiate<GameObject>(enemiesQueue.Dequeue().gameObject, transform.position, Quaternion.identity);
+
+
+   IEnumerator Spawn()
+   {
+       SpawnObject();
+       yield return new WaitForSeconds(spawnRate);
+       if(GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHealth > 0)
+       {
+           StartSpawn();
+       }
+   }
 }
