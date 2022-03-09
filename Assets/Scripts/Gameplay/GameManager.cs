@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField]
+    LevelManager levelManager;
+    [SerializeField]
     GameMode gameMode;
 
     private void Awake()
@@ -22,4 +24,5 @@ public class GameManager : MonoBehaviour
     }
 
     public GameMode CurrentGameMode {get => gameMode; set => gameMode = value;}
+    public LevelManager GetLevelManager => levelManager;
 }

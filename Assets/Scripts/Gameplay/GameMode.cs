@@ -13,6 +13,7 @@ public class GameMode : MonoBehaviour
 
     public Base GetCurrentBase => currentBase;
     public HealthBar GetHealthBar => healthBar;
+    public Score GetScore => score;
 
     private void Start()
     {

@@ -44,9 +44,11 @@ public class Tower : Hostile
         StartCoroutine(shooting);
     }
 
-    IEnumerator Shooting()
+    protected virtual IEnumerator Shooting()
     {
         GameObject go = Instantiate<GameObject>(projectile.gameObject, spawnPoint.position, Quaternion.identity);
+        Projectile p = go.GetComponent<Projectile>();
+        p.SetDamage(damage);
         go.transform.LookAt(target.transform);
         yield return new WaitForSeconds(attackRate);
         if(target)

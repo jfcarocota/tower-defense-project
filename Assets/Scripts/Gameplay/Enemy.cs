@@ -9,12 +9,15 @@ public class Enemy : Hostile
     [SerializeField]
     protected float moveSpeed;
     NavMeshAgent navMeshAgent;
+    [SerializeField, Range(1, 100)]
+    protected int points = 1;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
+    //waiting for gamemanager init
     private IEnumerator Start()
     {
         while(true)
@@ -42,6 +45,11 @@ public class Enemy : Hostile
     protected override void CheckStillAlive()
     {
         base.CheckStillAlive();
+        if(health == 0)
+        {
+            GameManager.Instance.CurrentGameMode.GetScore.AddPoints(points);
+            Destroy(gameObject);
+        }
     }
 
     protected virtual void Movement()

@@ -7,6 +7,8 @@ public class Projectile : Hostile
     [SerializeField, Range(0.1f, 20f)]
     float keepAlive = 7f;
     float timer;
+    [SerializeField, Range(0.1f, 20f)]
+    float speed = 10f;
 
     IEnumerator destroyObject;
 
@@ -16,11 +18,13 @@ public class Projectile : Hostile
         StartCoroutine(destroyObject);
     }
 
+    public void SetDamage(int damage) => base.damage = damage;
+
     IEnumerator DestroyObject()
     {
         while(true)
         {
-            transform.Translate(Vector3.forward * 5f * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
             timer += Time.deltaTime;
             if(timer >= keepAlive)
             {
@@ -37,6 +41,7 @@ public class Projectile : Hostile
         {
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.ReciveDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
