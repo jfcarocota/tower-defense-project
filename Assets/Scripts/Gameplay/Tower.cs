@@ -6,26 +6,24 @@ public class Tower : Hostile
 {
     [SerializeField]
     Transform rotator;
-    Enemy target;
+    protected Enemy target;
     [SerializeField]
-    Projectile projectile;
+    protected Projectile projectile;
     [SerializeField]
-    Transform spawnPoint;
+    protected Transform spawnPoint;
 
     [SerializeField]
     List<GameObject> projectiles;
 
     IEnumerator shooting;
-    float spawnTimer;
-
-    private void Start()
-    {
-        spawnTimer = attackRate;
-    }
 
     protected override void Attack()
     {
         base.Attack();
+        GameObject go = Instantiate<GameObject>(projectile.gameObject, spawnPoint.position, Quaternion.identity);
+        Projectile p = go.GetComponent<Projectile>();
+        p.SetDamage(damage);
+        go.transform.LookAt(target.transform);
     }
 
     protected override void CheckStillAlive()
@@ -46,10 +44,7 @@ public class Tower : Hostile
 
     protected virtual IEnumerator Shooting()
     {
-        GameObject go = Instantiate<GameObject>(projectile.gameObject, spawnPoint.position, Quaternion.identity);
-        Projectile p = go.GetComponent<Projectile>();
-        p.SetDamage(damage);
-        go.transform.LookAt(target.transform);
+        Attack();
         yield return new WaitForSeconds(attackRate);
         if(target)
         {
