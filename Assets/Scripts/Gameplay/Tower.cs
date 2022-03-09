@@ -17,6 +17,8 @@ public class Tower : Hostile
 
     IEnumerator shooting;
 
+    protected bool canAttak = true;
+
     protected override void Attack()
     {
         base.Attack();
@@ -51,17 +53,28 @@ public class Tower : Hostile
         }
     }
 
+    IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(attackRate);
+        canAttak = true;
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Enemy") && !target)
+        if(canAttak)
         {
-            target = other.GetComponent<Enemy>();
-            rotator.LookAt(target.transform);
-            StartShooting();
-        }
-        if(target)
-        {
-            rotator.LookAt(target.transform);
+            if(other.CompareTag("Enemy") && !target)
+            {
+                canAttak = false;
+                StartCoroutine(ResetAttack());
+                target = other.GetComponent<Enemy>();
+                rotator.LookAt(target.transform);
+                StartShooting();
+            }
+            if(target)
+            {
+                rotator.LookAt(target.transform);
+            }
         }
     }
 }

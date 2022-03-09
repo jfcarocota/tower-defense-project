@@ -116,3 +116,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   keepAlive: 7
+  speed: 20

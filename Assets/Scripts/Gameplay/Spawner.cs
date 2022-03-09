@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
    {
        SpawnObject();
        yield return new WaitForSeconds(spawnRate);
-       if(GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHealth > 0)
+       if(GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHealth > 0 && enemiesQueue.Count > 0)
        {
            StartSpawn();
        }
