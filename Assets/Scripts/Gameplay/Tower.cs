@@ -47,7 +47,7 @@ public class Tower : Hostile
     {
         Attack();
         yield return new WaitForSeconds(attackRate);
-        if(target)
+        if(target && canAttak)
         {
             StartShooting();
         }

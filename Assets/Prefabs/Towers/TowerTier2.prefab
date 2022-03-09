@@ -717,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   attackRate: 2
-  damage: 1
+  damage: 3
   enemyTag: 
   enemyLayer:
     serializedVersion: 2

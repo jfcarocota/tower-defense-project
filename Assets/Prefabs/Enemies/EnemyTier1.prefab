@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.6448805, z: 1}
-  m_Center: {x: 0, y: 0.8224405, z: 0}
+  m_Size: {x: 1, y: 4.176663, z: 1}
+  m_Center: {x: 0, y: 1.5883319, z: 0}
 --- !u!114 &610943036656960853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  moveSpeed: 3
+  moveSpeed: 4
   points: 3
   spawnProbaility: 1
 --- !u!195 &610943036656960852
