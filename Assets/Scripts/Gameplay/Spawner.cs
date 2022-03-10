@@ -64,5 +64,7 @@ public class Spawner : MonoBehaviour
 
    public Enemy GetBossClone => bossClone;
 
+   public bool BossDefeated => bossClone == null;
+
    bool CanSpawn => GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHeatlh > 0 && bossClone != null;
 }

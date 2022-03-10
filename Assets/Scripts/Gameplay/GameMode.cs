@@ -13,11 +13,15 @@ public class GameMode : MonoBehaviour
     [SerializeField]
     WinLose winLose;
     [SerializeField]
+    UpgradeSystem upgradeSystem;
+    [SerializeField]
     Spawner spawner;
 
     public Base GetCurrentBase => currentBase;
     public HealthBar GetHealthBar => healthBar;
     public Score GetScore => score;
+    public UpgradeSystem GetUpgradeSystem => upgradeSystem;
+    public Spawner GetSpawner => spawner;
 
     IEnumerator CheckGameplayStatus()
     {
@@ -32,14 +36,14 @@ public class GameMode : MonoBehaviour
         }
     }
 
-    public bool WinGame => spawner.GetBossClone == null && !currentBase.ImDead;
+    public bool WinGame => spawner.BossDefeated && !currentBase.ImDead;
 
     private IEnumerator Start()
     {
 
         while(true)
         {
-            if(spawner.GetBossClone != null)
+            if(!spawner.BossDefeated)
             {
                 GameManager.Instance.CurrentGameMode = this;
                 StartCoroutine(CheckGameplayStatus());
