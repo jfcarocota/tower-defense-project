@@ -50,13 +50,18 @@ public class Spawner : MonoBehaviour
     //Controling spawn rate
    IEnumerator Spawn()
    {
-       SpawnObject();
-       yield return new WaitForSeconds(spawnRate);
-       if(!GameManager.Instance.CurrentGameMode.LoseGame && bossClone != null);
-       {
-           StartSpawn();
-       }
+        if(enemiesQueue.Count > 0)
+        {
+            SpawnObject();
+        }
+        yield return new WaitForSeconds(spawnRate);
+        if(CanSpawn)
+        {
+            StartSpawn();
+        }
    }
 
    public Enemy GetBossClone => bossClone;
+
+   bool CanSpawn => !GameManager.Instance.CurrentGameMode.LoseGame && bossClone != null;
 }
