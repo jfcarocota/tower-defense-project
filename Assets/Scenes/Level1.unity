@@ -370,6 +370,7 @@ MonoBehaviour:
   maxSpawn: 0
   spawnRate: 1
   boss: {fileID: 2376011704614852841, guid: 044f1dc32c380ef46a9f970419b17383, type: 3}
+  bossClone: {fileID: 0}
 --- !u!1 &235516300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerTier3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5329799609181643393, guid: 5b45fc8792b9e2d4aaca7a257756ce26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5329799609181643397, guid: 5b45fc8792b9e2d4aaca7a257756ce26, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1315,6 +1320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerTier2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1344507350710785847, guid: fa4924f9ccbb35248a9b16598b8c327b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4924f9ccbb35248a9b16598b8c327b, type: 3}
 --- !u!1 &840978144
@@ -1466,6 +1475,10 @@ PrefabInstance:
     - target: {fileID: 2946797161504330551, guid: 4996de6aefb8ac74681484a67c2cfcd4, type: 3}
       propertyPath: m_Name
       value: TowerTier1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946797161504330551, guid: 4996de6aefb8ac74681484a67c2cfcd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4996de6aefb8ac74681484a67c2cfcd4, type: 3}
@@ -3474,6 +3487,10 @@ PrefabInstance:
     - target: {fileID: 5329799609181643393, guid: 5b45fc8792b9e2d4aaca7a257756ce26, type: 3}
       propertyPath: m_Name
       value: TowerTier3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329799609181643393, guid: 5b45fc8792b9e2d4aaca7a257756ce26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5329799609181643397, guid: 5b45fc8792b9e2d4aaca7a257756ce26, type: 3}
       propertyPath: m_RootOrder

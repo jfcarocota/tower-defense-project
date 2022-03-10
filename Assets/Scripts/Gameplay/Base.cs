@@ -43,5 +43,5 @@ public class Base : LivingObject
         }
     }
 
-    public int GetHealth => health;
+    public bool ImDead => health == 0;
 }

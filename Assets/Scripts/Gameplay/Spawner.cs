@@ -34,6 +34,7 @@ public class Spawner : MonoBehaviour
         }
         //Add boss
         enemiesQueue.Enqueue(bossClone);
+        //init spawner routine
         StartSpawn();
     }
 
@@ -63,5 +64,5 @@ public class Spawner : MonoBehaviour
 
    public Enemy GetBossClone => bossClone;
 
-   bool CanSpawn => !GameManager.Instance.CurrentGameMode.LoseGame && bossClone != null;
+   bool CanSpawn => GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHeatlh > 0 && bossClone != null;
 }

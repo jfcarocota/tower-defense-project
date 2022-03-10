@@ -23,7 +23,7 @@ public class GameMode : MonoBehaviour
     {
         while(true)
         {
-            if(WinGame || LoseGame)
+            if(WinGame || currentBase.ImDead)
             {
                 winLose.gameObject.SetActive(true);
                 break;
@@ -32,8 +32,7 @@ public class GameMode : MonoBehaviour
         }
     }
 
-    public bool WinGame => spawner.GetBossClone == null;
-    public bool LoseGame => currentBase.GetHealth == 0;
+    public bool WinGame => spawner.GetBossClone == null && !currentBase.ImDead;
 
     private IEnumerator Start()
     {
