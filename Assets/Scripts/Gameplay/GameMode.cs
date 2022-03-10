@@ -17,12 +17,28 @@ public class GameMode : MonoBehaviour
     [SerializeField]
     Spawner spawner;
 
+    /// <summary>
+    /// This basically is the Player
+    /// </summary>
     public Base GetCurrentBase => currentBase;
+    /// <summary>
+    /// The UI Health Bar in the game
+    /// </summary>
     public HealthBar GetHealthBar => healthBar;
+    /// <summary>
+    /// The UI Score in the game
+    /// </summary>
     public Score GetScore => score;
+    /// <summary>
+    /// Returns the Upgrame stuffs for check if upgrade is available
+    /// </summary>
     public UpgradeSystem GetUpgradeSystem => upgradeSystem;
+    /// <summary>
+    /// It's job is spawn enemis and tell you about the Horde
+    /// </summary>
     public Spawner GetSpawner => spawner;
 
+    //Need know if I can still playing the game
     IEnumerator CheckGameplayStatus()
     {
         while(true)
@@ -36,8 +52,12 @@ public class GameMode : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Literaly checks if I Won
+    /// </summary>
     public bool WinGame => spawner.BossDefeated && !currentBase.ImDead;
 
+    //Starts after boss created
     private IEnumerator Start()
     {
 

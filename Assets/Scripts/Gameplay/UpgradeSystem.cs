@@ -14,23 +14,17 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField]
     UpgradeUI upgradeUI;
 
+    //Init queues
     private void Start()
     {
         nextUpgrade = new Queue<GameObject>();
         towersQueue = new Queue<GameObject>(towers);
         StartCoroutine(CheckForUpgrades());
-        /*while(true)
-        {
-            if(!GameManager.Instance.CurrentGameMode.GetSpawner.BossDefeated)
-            {
-                StartCoroutine(CheckForUpgrades());
-                break;
-            }
-            yield return null;
-        }*/
     }
 
     int upgradesAvailable;
+
+    //Check if exist new tower to enable
     IEnumerator CheckForUpgrades()
     {
         yield return new WaitForSeconds(upgradeRate);
@@ -43,7 +37,17 @@ public class UpgradeSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Check if is posibble still creating towers
+    /// </summary>
     public bool MaxLevel => towersQueue.Count == 0;
+    /// <summary>
+    /// Check if I canck activate a new tower
+    /// </summary>
     public bool UpgradesAvailables => nextUpgrade.Count > 0;
+    /// <summary>
+    /// Returns the nex upgrade
+    /// </summary>
+    /// <returns></returns>
     public GameObject GetNextUpgrade => nextUpgrade.Dequeue();
 }

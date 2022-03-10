@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameMode gameMode;
 
+    // Basically the Jesus Christ of the game, Just Call him in any place inside Gameplay Space.
     private void Awake()
     {
         if(!Instance)
@@ -23,6 +24,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns a especial class who stores all important things of gameplay
+    /// </summary>
+    /// <value></value>
     public GameMode CurrentGameMode {get => gameMode; set => gameMode = value;}
+    /// <summary>
+    /// Returns a especial class for level loading
+    /// </summary>
     public LevelManager GetLevelManager => levelManager;
 }

@@ -10,6 +10,7 @@ public class UpgradeUI : MonoBehaviour
 
     private void Start()
     {
+        //Activate new towers
         btnUpgrade.onClick.AddListener(()=>{
             GameManager.Instance.CurrentGameMode.GetUpgradeSystem.GetNextUpgrade.SetActive(true);
             gameObject.SetActive(GameManager.Instance.CurrentGameMode.GetUpgradeSystem.UpgradesAvailables);

@@ -62,9 +62,16 @@ public class Spawner : MonoBehaviour
         }
    }
 
-   public Enemy GetBossClone => bossClone;
+    /// <summary>
+    /// Get the boss of the current horde created in gameplay
+    /// </summary>
+    public Enemy GetBossClone => bossClone;
 
-   public bool BossDefeated => bossClone == null;
+    //Check if boss in gameplay was defeated
+    public bool BossDefeated => bossClone == null;
 
-   bool CanSpawn => GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHeatlh > 0 && bossClone != null;
+    /// <summary>
+    /// If still alive and boss it's ok, then I can spawn more enemies
+    /// </summary>
+    bool CanSpawn => GameManager.Instance.CurrentGameMode.GetCurrentBase.GetHeatlh > 0 && bossClone != null;
 }
