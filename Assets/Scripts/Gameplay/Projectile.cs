@@ -40,6 +40,7 @@ public class Projectile : Hostile
         if(other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
+            //GameManager.Instance.CurrentGameMode.HordeTotalHealth -= damage;
             enemy.ReciveDamage(damage);
             Destroy(gameObject);
         }

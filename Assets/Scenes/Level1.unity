@@ -367,9 +367,9 @@ MonoBehaviour:
   - {fileID: 3411601713599941473, guid: d6e44fd22cd031343ac8fe5a45f7cfc4, type: 3}
   - {fileID: 3411601713599941473, guid: d6e44fd22cd031343ac8fe5a45f7cfc4, type: 3}
   - {fileID: 3411601713599941473, guid: d6e44fd22cd031343ac8fe5a45f7cfc4, type: 3}
-  - {fileID: 2376011704614852841, guid: 044f1dc32c380ef46a9f970419b17383, type: 3}
   maxSpawn: 0
   spawnRate: 1
+  boss: {fileID: 2376011704614852841, guid: 044f1dc32c380ef46a9f970419b17383, type: 3}
 --- !u!1 &235516300
 GameObject:
   m_ObjectHideFlags: 0

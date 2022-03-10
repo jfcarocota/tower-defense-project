@@ -51,9 +51,12 @@ public class Enemy : Hostile
         if(health == 0)
         {
             GameManager.Instance.CurrentGameMode.GetScore.AddPoints(points);
+            //GameManager.Instance.CurrentGameMode.HordeTotalHealth -= health;
             Destroy(gameObject);
         }
     }
+
+    public int GetPoints => points;
 
     protected virtual void Movement()
     {

@@ -20,4 +20,6 @@ public class Score : MonoBehaviour
     }
 
     public void UpdateScoreText() => scoreText.text = $"Score: {score}";
+
+    public int GetScoreInt => score;
 }

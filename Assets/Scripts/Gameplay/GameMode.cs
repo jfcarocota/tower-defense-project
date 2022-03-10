@@ -32,12 +32,21 @@ public class GameMode : MonoBehaviour
         }
     }
 
-    public bool WinGame => spawner.GetEnemiesQueue.Count == 0;
+    public bool WinGame => spawner.GetBossClone == null;
     public bool LoseGame => currentBase.GetHealth == 0;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        GameManager.Instance.CurrentGameMode = this;
-        StartCoroutine(CheckGameplayStatus());
+
+        while(true)
+        {
+            if(spawner.GetBossClone != null)
+            {
+                GameManager.Instance.CurrentGameMode = this;
+                StartCoroutine(CheckGameplayStatus());
+                break;
+            }
+            yield return null;
+        }
     }
 }

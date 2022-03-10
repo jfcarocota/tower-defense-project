@@ -7,6 +7,8 @@ public abstract class LivingObject : MonoBehaviour
     [SerializeField]
     protected int health;
 
+    public int GetHeatlh => health;
+
     public virtual void ReciveDamage(int damage)
     {
         health = health - damage > 0 ? health - damage : 0;
