@@ -27,10 +27,6 @@ public class Base : LivingObject
     protected override void CheckStillAlive()
     {
         base.CheckStillAlive();
-        if(health > 0)
-        {
-            
-        }
     }
 
     private void OnTriggerEnter(Collider other)

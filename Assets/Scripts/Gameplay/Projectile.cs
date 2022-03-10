@@ -18,8 +18,13 @@ public class Projectile : Hostile
         StartCoroutine(destroyObject);
     }
 
+    /// <summary>
+    /// A projectile take its damage from a character, so plase send your damage when it's spawned
+    /// </summary>
+    /// <param name="damage"></param>
     public void SetDamage(int damage) => base.damage = damage;
 
+    //Check how much time will be rendered this projectile.
     IEnumerator DestroyObject()
     {
         while(true)
@@ -35,6 +40,7 @@ public class Projectile : Hostile
         }
     }
 
+    //Check if I hit a bad guy
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Enemy"))

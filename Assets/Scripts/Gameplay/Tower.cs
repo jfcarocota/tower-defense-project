@@ -19,6 +19,7 @@ public class Tower : Hostile
 
     protected bool canAttak = true;
 
+    //Basically instantiate a bullet, it could have awesome implement an object pooling but no time :C
     protected override void Attack()
     {
         base.Attack();
@@ -43,6 +44,7 @@ public class Tower : Hostile
         StartCoroutine(shooting);
     }
 
+    //Fire a bullet
     protected virtual IEnumerator Shooting()
     {
         Attack();
@@ -53,12 +55,14 @@ public class Tower : Hostile
         }
     }
 
+    //Not always can attack, this resets the checker of attack
     IEnumerator ResetAttack()
     {
         yield return new WaitForSeconds(attackRate);
         canAttak = true;
     }
 
+    //Seek for enemies and start fire.
     private void OnTriggerStay(Collider other)
     {
         if(canAttak)
